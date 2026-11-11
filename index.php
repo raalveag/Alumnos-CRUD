@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!is_string($tokenRecibido) ||
         !hash_equals($_SESSION['csrf_token'], $tokenRecibido)) {
         http_response_code(403);
-        exit('Solicitud rechazada: token de seguridad invalido. Recarga la pagina.');
+        exit('Solicitud rechazada: token de seguridad no valido. Recarga la pagina.');
     }
 
     $accion = isset($_POST['accion']) ? $_POST['accion'] : '';
